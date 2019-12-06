@@ -12,17 +12,18 @@ class ItemCategory extends Component {
   state = {}
 
   render() {
+    console.log(this.state)
     return (
       <SwipeRow
         leftOpenValue={75}
         // rightOpenValue={-75}
-        key={this.props.city.name}
+        key={this.props.news.title}
       >
         <View style={styles.standaloneRowBack}>
           <Button
             style={styles.backTextWhite}
             title="Suppr."
-            onPress={() => this.props.onDelete(this.props.city.name)}
+            onPress={() => this.props.onDelete(this.props.news.title)}
           ></Button>
         </View>
         <View style={styles.standaloneRowFront}>
@@ -33,9 +34,9 @@ class ItemCategory extends Component {
               justifyContent: 'space-between'
             }}
           >
-            <Text>{this.props.city.name}</Text>
+            <Text>{this.props.news.name}</Text>
             <View style={{ flex: 2, flexDirection: 'row' }}>
-              <Text>{this.props.city.main.temp} °C</Text>
+              <Text>{this.props.news.main.temp} °C</Text>
               <Image
                 style={{ width: 80, height: 80 }}
                 source={{
